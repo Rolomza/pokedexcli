@@ -26,7 +26,7 @@ func startRepl() {
 
 		command, ok := availableCommands[commandName]
 		if !ok {
-			fmt.Println("invalid command")
+			fmt.Println("Invalid command - Use 'help' for available commands!")
 			continue
 		}
 
@@ -46,6 +46,11 @@ func getCommands() map[string]cliCommand {
 			name: "help",
 			description: "Prints the help menu",
 			callback: callbackHelp,
+		},
+		"map": {
+			name: "map",
+			description: "List some location areas",
+			callback: callbackMap,
 		},
 		"exit": {
 			name: "exit",
